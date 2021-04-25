@@ -2,29 +2,29 @@ import React, { useState } from "react";
 import Home from "./Home";
 import Browse from "./Browse";
 import Shoplist from "./Shoplist";
-import { BottomNavigation } from "react-native-paper";
+import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
+const Tab = createMaterialBottomTabNavigator();
 
-const Screen = () => {
-  const [index, setIndex] = useState(0);
-  const [routes] = useState([
-    { key: "feeds", title: "Home", icon: "home", color: "#3F51B5" },
-    { key: "albums", title: "Browse", icon: "table", color: "#009688" },
-    { key: "recents", title: "Shoplist", icon: "clipboard", color: "#795548" },
-  ]);
-
-  const renderScene = BottomNavigation.SceneMap({
-    feeds: Home,
-    albums: Browse,
-    recents: Shoplist,
-  });
-
+const MainScreen = () => {
   return (
-    <BottomNavigation
-      navigationState={{ index, routes }}
-      onIndexChange={setIndex}
-      renderScene={renderScene}
-    />
+    <Tab.Navigator>
+      <Tab.Screen
+        name="Home"
+        component={Home}
+        options={{ tabBarIcon: "home" }}
+      />
+      <Tab.Screen
+        name="Browse"
+        component={Browse}
+        options={{ tabBarIcon: "table" }}
+      />
+      <Tab.Screen
+        name="Shoplist"
+        component={Shoplist}
+        options={{ tabBarIcon: "clipboard" }}
+      />
+    </Tab.Navigator>
   );
 };
 
-export default Screen;
+export default MainScreen;

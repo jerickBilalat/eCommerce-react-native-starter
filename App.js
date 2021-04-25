@@ -4,11 +4,11 @@ import { StyleSheet } from "react-native";
 import { Provider as PaperProvider } from "react-native-paper";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
+import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
 import theme from "./CustomProperties/Themes";
 
 import MainScreen from "./Screens/MainScreen";
 import Pdp from "./Screens/Pdp";
-import TopBar from "./Components/TopBar";
 
 const Stack = createStackNavigator();
 
