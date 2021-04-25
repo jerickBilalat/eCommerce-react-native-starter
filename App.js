@@ -1,17 +1,26 @@
+import "react-native-gesture-handler";
 import React from "react";
 import { StyleSheet } from "react-native";
 import { Provider as PaperProvider } from "react-native-paper";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
 import theme from "./CustomProperties/Themes";
 
 import MainScreen from "./Screens/MainScreen";
+import Pdp from "./Screens/Pdp";
 import TopBar from "./Components/TopBar";
+
+const Stack = createStackNavigator();
 
 export default function App() {
   return (
     <PaperProvider theme={theme}>
-      <TopBar />
-
-      <MainScreen />
+      <NavigationContainer>
+        <Stack.Navigator initialRoute="Main">
+          <Stack.Screen name="Main" component={MainScreen} />
+          <Stack.Screen name="Pdp" component={Pdp} />
+        </Stack.Navigator>
+      </NavigationContainer>
     </PaperProvider>
   );
 }

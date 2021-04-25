@@ -1,21 +1,21 @@
 import React, { useState } from "react";
-import FeedRoute from "./FeedScreen";
-import AlbumRoute from "./AlbumScreen";
-import RecentRoute from "./RecentScreen";
+import Home from "./Home";
+import Browse from "./Browse";
+import Shoplist from "./Shoplist";
 import { BottomNavigation } from "react-native-paper";
 
 const Screen = () => {
   const [index, setIndex] = useState(0);
   const [routes] = useState([
-    { key: "feeds", title: "Feeds", icon: "message", color: "#3F51B5" },
-    { key: "albums", title: "Albums", icon: "album", color: "#009688" },
-    { key: "recents", title: "Recents", icon: "history", color: "#795548" },
+    { key: "feeds", title: "Home", icon: "home", color: "#3F51B5" },
+    { key: "albums", title: "Browse", icon: "table", color: "#009688" },
+    { key: "recents", title: "Shoplist", icon: "clipboard", color: "#795548" },
   ]);
 
   const renderScene = BottomNavigation.SceneMap({
-    feeds: FeedRoute,
-    albums: AlbumRoute,
-    recents: RecentRoute,
+    feeds: Home,
+    albums: Browse,
+    recents: Shoplist,
   });
 
   return (
