@@ -13,10 +13,6 @@ export function queryProducts(
   filters = {},
   prevState = []
 ) {
-<<<<<<< HEAD
-=======
-  debugger;
->>>>>>> origin/master
   return (dispatch) => {
     dispatch(queryProductsStarted());
 

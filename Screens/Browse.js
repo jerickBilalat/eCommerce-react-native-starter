@@ -1,5 +1,4 @@
 import * as React from "react";
-<<<<<<< HEAD
 import { useDispatch, useSelector } from "react-redux";
 import { Avatar, Button, Card, Title, Paragraph } from "react-native-paper";
 import {
@@ -102,17 +101,6 @@ export default function Browse({ navigation }) {
         })}
     </ScrollView>
   );
-=======
-import { useDispatch } from "react-redux";
-import { Text } from "react-native-paper";
-import { queryProducts } from "../Redux/Actions/productActions";
-export default function Browse() {
-  const dispatch = useDispatch();
-  React.useEffect(() => {
-    dispatch(queryProducts());
-  });
-  return <Text>Browse</Text>;
->>>>>>> origin/master
 }
 
 const styles = StyleSheet.create({
