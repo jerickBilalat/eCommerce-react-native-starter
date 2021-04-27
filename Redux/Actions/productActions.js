@@ -13,7 +13,6 @@ export function queryProducts(
   filters = {},
   prevState = []
 ) {
-  debugger;
   return (dispatch) => {
     dispatch(queryProductsStarted());
 
