@@ -8,7 +8,7 @@ import {
   QUERY_PRODUCTS_SUCCEEDED,
   QUERY_PRODUCTS_STARTED,
   FLASH_MESSAGE,
-} from "../actions/types";
+} from "../Actions/types";
 
 const initialState = {
   toShop: [],
